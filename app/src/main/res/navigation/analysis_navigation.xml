@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/analysis_navigation"
+    app:startDestination="@id/analysisFragment">
+
+    <fragment
+        android:id="@+id/weeklyAnalysisFragment"
+        android:name="com.hakvardanyan.navigationsample.main.analysis.WeeklyAnalysisFragment"
+        android:label="WeeklyAnalysisFragment"
+        tools:layout="@layout/fragment_weekly_analysis">
+        <action
+            android:id="@+id/action_weeklyAnalysisFragment_to_successReportFragment"
+            app:destination="@id/successReportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/successReportFragment"
+        android:name="com.hakvardanyan.navigationsample.main.analysis.SuccessReportFragment"
+        android:label="SuccessReportFragment"
+        tools:layout="@layout/fragment_success_report" />
+    <fragment
+        android:id="@+id/analysisFragment"
+        android:name="com.hakvardanyan.navigationsample.main.analysis.AnalysisFragment"
+        android:label="AnalysisFragment"
+        tools:layout="@layout/fragment_analysis">
+        <action
+            android:id="@+id/action_analysisFragment_to_weeklyAnalysisFragment"
+            app:destination="@id/weeklyAnalysisFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>
